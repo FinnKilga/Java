@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main
+public class Bankomat
 {
     public static void main(String[] args)
     {
