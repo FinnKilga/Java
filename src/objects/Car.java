@@ -2,12 +2,12 @@ package objects;
 
 public class Car
 {
-    public int fuelAmount;
+    public double fuelAmount;
     public String brand;
     public String serialNumber;
     public String color;
-    public int fuelConsumption;
-    public int maxFuelLevel;
+    public double fuelConsumption;
+    public double maxFuelLevel;
 
     public void drive()
     {
@@ -20,10 +20,10 @@ public class Car
     }
     public void turboBoost()
     {
-        int tank = this.fuelAmount/this.maxFuelLevel*100;
+        double tank = this.fuelAmount/this.maxFuelLevel*100;
         if (tank > 10)
         {
-            System.out.println("SuperBoostMode");
+            System.out.println("SuperBoostMode activated");
         }
         else
         {

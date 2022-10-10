@@ -20,6 +20,7 @@ public class Main
         c2.color = "silver";
         c2.maxFuelLevel = 60;
 
+
         c1.turboBoost();
         c2.turboBoost();
 
