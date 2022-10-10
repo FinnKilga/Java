@@ -49,10 +49,10 @@ public class TicTacToe
                     }
                 }
                 while (inputCheck);
-                if (gamefield[row][col] == null) //wenn leer, dann soll Zeile und Spalte neu eingegeben werden
-                                                //operand geht nicht mit array?
+                if (gamefield[row][col] == 'X'||gamefield[row][col] == 'O')
                 {
                     inputCheck = true;
+                    System.out.println("Dieses Feld ist bereits belegt, bitte geben Sie ein anderes ein!");
                 }
             }
             while (inputCheck);
@@ -86,8 +86,16 @@ public class TicTacToe
                 }
                 System.out.println();
             }
+            finish = F_finish();
         }
         while (!finish);
-
     }
+    public static boolean F_finish()
+    {
+        boolean finish = false;
+        return finish;
+    }
+
 }
+//gewinnerabfrage
+//ausgabe wenn array nicht komplett gefüllt ist

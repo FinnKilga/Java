@@ -40,7 +40,7 @@ public class Bankomat
                 default:
                     System.out.println("Bitte geben Sie einen der angegebenen Buchstaben ein!");
             }
-            System.out.println("");
+            System.out.println();
         }
         while(cswitch!='b');
     }
