@@ -1,5 +1,7 @@
 package objects;
 
+import java.util.ArrayList;
+
 public class Car
 {
     private double fuelAmount;
@@ -8,16 +10,37 @@ public class Car
     private String color;
     private double fuelConsumption;
     private double maxFuelLevel;
+    private Engine engine;
+    private ArrayList<Mirror> mirrors;
+    private ArrayList<Tire> tires;
 
 //method
-    public Car(String brand, String serialNumber, double fuelConsumption)
+    public Car(String brand, String serialNumber, double fuelConsumption, Engine engine)
     {
         this.fuelConsumption = fuelConsumption;
         this.serialNumber = serialNumber;
         this.brand = brand;
+        this.engine = engine;
+        this.mirrors = new ArrayList<Mirror>();
+        this.tires = new ArrayList<Tire>();
     }
-    public void drive()
+    public void addMirror(Mirror mirror)
     {
+        this.mirrors.add(mirror);
+    }
+    public void addTire(Tire tire)
+    {
+        this.tires.add(tire);
+    }
+    public void drive(int speed)
+    {
+        if (speed < 1)
+        {
+            speed = 1;
+        } else if (speed > 100)
+        {
+         speed = 100;
+        }
         this.fuelAmount = this.fuelAmount - this.fuelConsumption;
         System.out.println("I am driving");
     }
@@ -48,7 +71,7 @@ public class Car
     }
     public void getRemainingRange()
     {
-        System.out.println("You can drive " + Math.floor(fuelAmount/this.fuelConsumption) + " times");
+        System.out.println("You can drive " + Math.floor(this.fuelAmount/this.fuelConsumption) + " times");
     }
 //set
     public void setBrand(String brand) {
@@ -108,5 +131,18 @@ public class Car
 
     public String getBrand() {
         return brand;
+    }
+
+    public Engine getEngine()
+    {
+        return engine;
+    }
+
+    public ArrayList<Mirror> getMirrors() {
+        return mirrors;
+    }
+
+    public ArrayList<Tire> getTires() {
+        return tires;
     }
 }
