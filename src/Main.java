@@ -1,7 +1,4 @@
-import objects.Car;
-import objects.Engine;
-import objects.Mirror;
-import objects.Tire;
+import objects.*;
 
 public class Main
 {
@@ -25,7 +22,6 @@ public class Main
         c1.addTire(t1);
         c1.addTire(t1);
 
-
         Car c2 = new Car("Mercedes", "M2004", 9,e2);
         c2.setColor("silver");
         c2.setFuelAmount(1);
@@ -36,5 +32,18 @@ public class Main
         c3.setFuelAmount(55);
         c3.setMaxFuelLevel(55);
 
+
+        Remote r1 = new Remote(100,100);
+        r1.getStatus();
+        r1.turnOn();
+        r1.turnOff();
+        r1.getStatus();
+        r1.turnOn();
+        r1.getStatus();
+        r1.turnOn();
+        r1.getStatus();
+        r1.turnOn();
+        r1.getStatus();
+        r1.turnOn();
     }
 }
