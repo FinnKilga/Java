@@ -6,13 +6,41 @@ public class Car
     private int maxSpeed;
     private double price;
     private int fuelConsumption;
+    private Engine engine;
 
-    public void Car (String color,int maxSpeed,double price,int fuelConsumption)
+    public Car(String color,int maxSpeed,double price,int fuelConsumption,Engine engine)
     {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.price = price;
         this.fuelConsumption = fuelConsumption;
+        this.engine = engine;
+
+    }
+    public void buy(Hersteller h)
+    {
+        double endPrice;
+        endPrice = this.price - this.price * h.rabatt/100;
+        System.out.println("Das Auto kostet ohne Rabatt " + this.price);
+        System.out.println("Das Auto kostet nach Abzug des Rabattes noch " + endPrice);
+    }
+    public void drive(int kilometeranzahl)
+    {
+        double fuelConsumptionNew;
+        double fuelConsumptionAusgabe;
+        //Der Benzinverbrauch entspricht die ersten 50.000km dem Basisverbrauch. Danach wird er um 9.8 Prozent höher.
+        if (kilometeranzahl < 50000)
+        {
+            System.out.println("Das Auto verbraucht " + this.fuelConsumption * kilometeranzahl + " L.");
+        }
+        else
+        {
+            fuelConsumptionAusgabe = kilometeranzahl * this.fuelConsumption;
+            kilometeranzahl -= 50000;
+            fuelConsumptionNew = this.fuelConsumption + (this.fuelConsumption * 0.098);
+            fuelConsumptionAusgabe += kilometeranzahl * fuelConsumption;
+            System.out.println("Das Auto verbraucht " + fuelConsumptionAusgabe + " L.");
+        }
     }
 
     public void setFuelConsumption(int fuelConsumption)
