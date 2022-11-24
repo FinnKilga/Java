@@ -1,6 +1,8 @@
 import at.finn.oo.projects.cars.Car;
 import at.finn.oo.projects.cars.Engine;
 import at.finn.oo.projects.cars.Hersteller;
+import at.finn.oo.projects.lamp.Gluhelement;
+import at.finn.oo.projects.lamp.Lamp;
 
 public class Main
 {
@@ -13,12 +15,20 @@ public class Main
         Car c1 = new Car("red",175,20000,5,e1);
         Car c2 = new Car("black",500,100000,10,e2);
 
-        c1.buy(pirker);
-        c1.buy((audi));
 
-        c1.drive(49000);
-        c1.drive(50000);
+        Gluhelement g1 = new Gluhelement("g1","red",10,false);
+        Gluhelement g2 = new Gluhelement("g2","blue",15,false);
+        Gluhelement g3 = new Gluhelement("g3","white",5,true);
 
+        Lamp l1 = new Lamp();
+        l1.addLightElement(g1);
+        l1.addLightElement(g2);
+        l1.addLightElement(g3);
+
+        l1.turnAllOn();
+        l1.getOverallPowerUsage();
+        l1.printNamesOfLightElements();
+        l1.turnAllOff();
 
     }
 }
