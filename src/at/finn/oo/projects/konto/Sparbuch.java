@@ -4,7 +4,9 @@ public class Sparbuch extends Konto
 {
     private double interestRate;
 
-    public Sparbuch(double interestRate) {
+    public Sparbuch(double interestRate,double overdraftLimit)
+    {
+        super(overdraftLimit);
         this.interestRate = interestRate;
     }
 
