@@ -1,23 +1,18 @@
-import at.finn.oo.projects.figuren.Kreis;
-import at.finn.oo.projects.figuren.Quadrat;
-import at.finn.oo.projects.figuren.Würfel;
-import at.finn.oo.projects.konto.Girokonto;
-import at.finn.oo.projects.konto.Konto;
-import at.finn.oo.projects.konto.Kreditkonto;
-import at.finn.oo.projects.konto.Sparbuch;
-import at.finn.oo.projects.rechner.Rechner;
-import at.finn.oo.projects.rechner.WissenschaftlicherRechner;
-import at.finn.oo.projects.rechner.Wurzelrechner;
+import at.finn.oo.projects.Handy.*;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Kreis k1 = new Kreis("Kreis 1",8);
-        Quadrat q1 = new Quadrat("Quader 1",5);
-        q1.getName();
-        q1.getArea();
-        Würfel w1 = new Würfel("Würfel 1",5);
-        w1.getArea();
+        PhotoFile file_one = new PhotoFile(PhotoFile.DATATYPE.jpg,"file_one",50);
+        PhotoFile file_two = new PhotoFile(PhotoFile.DATATYPE.mp4,"file_two",50);
+        Camera c1 = new Camera(Camera.RESOLUTION.high);
+        SimCard s1 = new SimCard("1234","06763651617");
+        MemoryCard m1 = new MemoryCard(1000);
+        Phone p1 = new Phone(s1,m1,c1,"black");
+        p1.makePhoto("photo one", PhotoFile.DATATYPE.jpg);
+        p1.printFiles();
+        p1.makeCall("06642221093");
+        p1.getFreeSpace();
     }
 }
