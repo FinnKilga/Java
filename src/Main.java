@@ -1,17 +1,12 @@
-import at.finn.oo.projects.Camera.Camera;
-import at.finn.oo.projects.Camera.SDCard;
+import at.finn.oo.projects.Musicbox.Title;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        SDCard card = new SDCard(16);
-        Camera camera = new Camera(card,"black",250,1080, Camera.SETTINGS.big);
-        camera.takePicture("p1");
-        camera.takePicture("p2");
-        camera.setSetting(Camera.SETTINGS.small);
-        camera.takePicture("p3");
-        camera.takePicture("p4");
-        camera.takePicture("p5");
+        Title t1 = new Title(4.20,"420");
+        Title t2 = new Title(4.20,"420");
+        Title t3 = new Title(4.20,"420");
+        Title t4 = new Title(4.20,"420");
     }
 }
