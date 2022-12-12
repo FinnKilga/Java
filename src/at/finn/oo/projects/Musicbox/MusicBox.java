@@ -26,6 +26,8 @@ public class MusicBox
             if (r == record)
             {
                 this.records.remove(record);
+                System.out.println("Record '" + r.getRecordTitle() + "' removed");
+                break;
             }
             else
             {
@@ -64,7 +66,15 @@ public class MusicBox
     }
     public void play(int num)
     {
-        Title title = this.currentRecord.titles.get(num);
-        System.out.println("Playing " + title.getName());
+        num -=1;
+        if (this.currentRecord == null)
+        {
+            System.out.println("No record loaded");
+        }
+        else
+        {
+            Title title = this.currentRecord.titles.get(num);
+            System.out.println("Playing " + title.getName());
+        }
     }
 }
